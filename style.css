@@ -199,3 +199,14 @@ footer.site .fine{border-top:1px solid #2c4248;margin-top:40px;padding-top:20px;
 /* "What do you need today?" choices blend into the box */
 .hero-card a.row{background:transparent;border-color:rgba(29,43,51,.18)}
 .hero-card a.row:hover{background:rgba(255,255,255,.35)}
+
+/* locations page: every other office */
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:8px;align-items:start}
+.loc-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.loc-card h3{font-size:1.02rem;margin:0 0 6px}
+.loc-card ul{list-style:none;margin:0;padding:0;font-size:.9rem;color:var(--muted)}
+.loc-card li{margin-bottom:6px}
+.loc-card li:last-child{margin-bottom:0}
+.loc-card a{color:var(--muted);text-decoration:none}
+.loc-card a:hover{text-decoration:underline}
+#locq{margin-top:4px}

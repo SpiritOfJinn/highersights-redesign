@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -27,7 +27,7 @@
     </a>
     <button class="menu-btn" aria-expanded="false" onclick="this.closest('header').classList.toggle('open');this.setAttribute('aria-expanded',this.closest('header').classList.contains('open'))">Menu</button>
     <nav class="main" aria-label="Main">
-      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
       <a href="providers.html">Providers</a>
       <a href="insurance.html">Insurance</a>
       <a href="locations.html" aria-current="page">Locations</a>
@@ -58,16 +58,30 @@
       </div>
     </div>
     <div>
-      <h3 style="margin-top:2.6em">Providers also see clients in</h3>
+      <h3 style="margin-top:2.6em">Offices in</h3>
       <div class="cities">
         <p><b>Denver metro:</b> Denver, Arvada, Aurora, Centennial, Englewood, Lakewood, Littleton, Morrison, Parker, Wheat Ridge</p>
         <p><b>Boulder County:</b> Boulder, Lafayette, Longmont, Louisville</p>
         <p><b>Mountains:</b> Evergreen, Fraser, Steamboat Springs, Telluride</p>
         <p><b>Front Range:</b> Colorado Springs, Fort Collins, Pueblo</p>
         <p><b>Western Slope &amp; SW:</b> Grand Junction, Fruita, Durango</p>
+        <p><b>Out of state:</b> Boise, ID; Fort Pierce, FL</p>
       </div>
-      <p style="color:var(--muted);font-size:.9rem">Each provider's office is listed when you book. <a href="https://www.highersightscounseling.com/locations/">See all addresses</a>.</p>
+      <p style="color:var(--muted);font-size:.9rem"><a href="#other-offices">See every office address ↓</a></p>
     </div>
+  </div>
+</section>
+
+<section id="other-offices" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Other offices</div>
+      <h2>Providers at a different location</h2>
+      <p class="lead">Many of our providers also see clients at their own offices around Colorado. Search by city, ZIP, or provider name.</p>
+    </div>
+    <input class="search" id="locq" type="search" placeholder="Try “Boulder”, “80112”, or a provider's name" aria-label="Search offices">
+    <p class="count" id="loccount"></p>
+    <div class="loc-grid" id="locgrid"></div>
   </div>
 </section>
 </main>
@@ -101,6 +115,21 @@
     <div class="fine">© Higher Sights Counseling. Redesign concept for review — content summarized from highersightscounseling.com.</div>
   </div>
 </footer>
-<script src="providers.js?v=5"></script>
+<script src="providers.js?v=8"></script>
+<script src="locations-data.js?v=8"></script>
+<script>
+(function(){
+  const grid=document.getElementById("locgrid"), q=document.getElementById("locq"), count=document.getElementById("loccount");
+  const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const map=a=>"https://maps.google.com/?q="+encodeURIComponent(a.replace(/\s*\(.*?\)\s*$/,""));
+  function render(){
+    const t=q.value.trim().toLowerCase();
+    const list=OTHER_LOCATIONS.filter(([n,a])=>!t||(n+" "+a.join(" ")).toLowerCase().includes(t));
+    grid.innerHTML=list.map(([n,a])=>`<div class="loc-card"><h3>${esc(n)}</h3><ul>${a.map(x=>`<li><a href="${map(x)}" target="_blank" rel="noopener">${esc(x)}</a></li>`).join("")}</ul></div>`).join("")||'<p style="color:var(--muted)">No offices match. Call 720-943-7080 and we\'ll help.</p>';
+    count.textContent=`Showing ${list.length} of ${OTHER_LOCATIONS.length} providers`;
+  }
+  q.addEventListener("input",render); render();
+})();
+</script>
 </body>
 </html>
