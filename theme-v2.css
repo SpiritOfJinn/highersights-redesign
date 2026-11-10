@@ -34,7 +34,7 @@ header.site .btn-outline:hover{background:#fff;color:var(--ink)}
 .btn-outline:hover{background:var(--ink);color:#fff}
 
 /* hero with their aurora photo */
-.hero{padding:96px 0 88px;color:#fff;
+.hero{padding:150px 0 140px;color:#fff;
   background:linear-gradient(90deg,rgba(8,6,12,.72) 0%,rgba(8,6,12,.32) 55%,rgba(8,6,12,.08) 100%),
              url("https://www.highersightscounseling.com/wp-content/uploads/2024/10/Group-213-1-r.jpg") center 35%/cover no-repeat,
              var(--black)}
@@ -79,8 +79,8 @@ footer.site .footer-logo{height:52px;width:auto;margin-bottom:14px}
 /* "What do you need today?" box uses the Find a Provider gradient */
 .hero-card{background:var(--grad)}
 .hero-card h3,.hero-card small{color:var(--ink)}
-.hero-card a.row{background:rgba(255,255,255,.88);border-color:rgba(255,255,255,.6)}
-.hero-card a.row:hover{background:#fff;border-color:var(--ink);color:var(--ink)}
+.hero-card a.row{background:transparent;border-color:rgba(19,17,19,.25);color:var(--ink)}
+.hero-card a.row:hover{background:rgba(255,255,255,.25);border-color:var(--ink);color:var(--ink)}
 
 /* services tabs: dark section like theirs, gradient underline on the active tab */
 #services{background:radial-gradient(900px 420px at 15% 0%,rgba(200,37,209,.18),transparent 60%),radial-gradient(900px 420px at 95% 100%,rgba(39,245,251,.12),transparent 60%),var(--black);color:#fff}
@@ -105,3 +105,6 @@ footer.site .footer-logo{height:52px;width:auto;margin-bottom:14px}
 .join-text{background:linear-gradient(90deg,var(--blue) 30%,var(--magenta) 130%)}
 .join-text p{color:#f1ecfb}
 .join-text .btn-primary{background:var(--grad);color:var(--ink)}
+
+/* taller black services section */
+#services{padding:100px 0}

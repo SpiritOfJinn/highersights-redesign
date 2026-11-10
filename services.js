@@ -73,7 +73,7 @@
   if (!root) return;
   const providersPage = root.dataset.providers || "providers.html";
   const keys = Object.keys(SERVICES);
-  const imgURL = (id, fp) => `https://images.unsplash.com/photo-${id}?w=1400&h=480&fit=crop&auto=format&q=75${fp ? "&crop=focalpoint&fp-x=0.5&fp-y=" + fp : ""}`;
+  const imgURL = (id, fp) => `https://images.unsplash.com/photo-${id}?w=1400&h=700&fit=crop&auto=format&q=75${fp ? "&crop=focalpoint&fp-x=0.5&fp-y=" + fp : ""}`;
   const li = arr => "<ul>" + arr.map(x => `<li>${x}</li>`).join("") + "</ul>";
 
   root.innerHTML = `<div class="svc-side"><div class="eyebrow">Services</div><h2>How we can help</h2>
