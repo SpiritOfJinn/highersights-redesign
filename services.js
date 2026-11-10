@@ -5,7 +5,7 @@
   const SERVICES = {
     dep: {
       icon: "🌤", title: "Depression & Anxiety",
-      img: "1522075782449-e45a34f1ddfb", alt: "Woman sitting on a bench watching the sunset over the hills",
+      img: "1527137342181-19aab11a8ee8", alt: "Woman sitting alone by a large window, hugging her knees",
       intro: "Almost everyone goes through periods of low mood, worry, or stress. When it starts getting in the way of sleep, work, relationships, or just getting through the day, therapy and medication can help. Many people use both.",
       helps: ["Ongoing sadness, emptiness, or loss of interest", "Constant worry, racing thoughts, or panic attacks", "Trouble sleeping, focusing, or getting motivated", "Stress, burnout, and life transitions"],
       expect: ["Your provider learns your history and what's going on now, then you set goals together", "Common approaches include CBT, DBT, and talk therapy", "If you'd like to look at medication, we can connect you with medication management"],
@@ -13,7 +13,7 @@
     },
     trauma: {
       icon: "🧭", title: "Trauma & PTSD",
-      img: "1609333902029-5ddf58a6c85c", alt: "Hiker reaching a mountain summit at sunrise",
+      img: "1493836512294-502baa1986e2", alt: "Man sitting on a couch holding his head",
       intro: "After a traumatic experience, the brain can stay on high alert, as if the danger could happen again at any moment. Trauma-informed counseling, medication, or both can help your nervous system settle and let you feel safe again.",
       helps: ["Flashbacks, nightmares, or intrusive memories", "Feeling on edge, numb, or easily startled", "Childhood trauma and complex PTSD (C-PTSD)", "Abuse, assault, accidents, loss, and other traumatic events"],
       expect: ["You set the pace. You don't have to share details before you're ready", "Approaches include EMDR, somatic therapy, Brainspotting, IFS, and trauma-focused CBT", "Medication can be added to help with sleep, anxiety, or mood"],
@@ -73,12 +73,13 @@
   if (!root) return;
   const providersPage = root.dataset.providers || "providers.html";
   const keys = Object.keys(SERVICES);
-  const imgURL = id => `https://images.unsplash.com/photo-${id}?w=1200&h=680&fit=crop&auto=format&q=75`;
+  const imgURL = id => `https://images.unsplash.com/photo-${id}?w=1400&h=480&fit=crop&auto=format&q=75`;
   const li = arr => "<ul>" + arr.map(x => `<li>${x}</li>`).join("") + "</ul>";
 
-  root.innerHTML = `<div class="svc-list" role="tablist" aria-orientation="vertical" aria-label="Services">
-      ${keys.map(k => `<button type="button" role="tab" id="svctab-${k}" data-k="${k}" aria-controls="svcPanel" aria-selected="false" tabindex="-1"><span class="ti">${SERVICES[k].icon}</span><span>${SERVICES[k].title}</span></button>`).join("")}
-    </div>
+  root.innerHTML = `<div class="svc-side"><div class="eyebrow">Services</div><h2>How we can help</h2>
+    <div class="svc-list" role="tablist" aria-orientation="vertical" aria-label="Services">
+      ${keys.map(k => `<button type="button" role="tab" id="svctab-${k}" data-k="${k}" aria-controls="svcPanel" aria-selected="false" tabindex="-1">${SERVICES[k].title}</button>`).join("")}
+    </div></div>
     <div class="svc-panel" id="svcPanel" role="tabpanel"></div>`;
   const panel = root.querySelector(".svc-panel");
   const tabs = [...root.querySelectorAll('[role="tab"]')];
