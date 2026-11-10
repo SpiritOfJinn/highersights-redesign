@@ -1,0 +1,77 @@
+/* Version 2: same layout and button shapes as version 1, recolored with
+   Higher Sights' own palette (black, green-to-cyan gradient, magenta, blue),
+   their Poppins font, their logo, and their aurora banner photo. */
+:root{
+  --ink:#131113; --muted:#55525a; --line:#e6e4ec;
+  --bg:#ffffff; --card:#ffffff; --sand:#f5f0f8; --sage:#eef1fd;
+  --brand:#3d5fd6; --brand-dark:#2a46ad; --accent:#b51fbe;
+  --black:#0b0a0d; --green:#00ff66; --cyan:#27f5fb; --magenta:#c825d1; --blue:#547ee8;
+  --grad:linear-gradient(105deg,var(--green) 0%,var(--cyan) 100%);
+  --serif:"Poppins",Arial,Helvetica,sans-serif; --sans:"Poppins",Arial,Helvetica,sans-serif;
+}
+body{font-size:16px}
+h1,h2,h3{font-weight:600;letter-spacing:-.015em}
+
+/* black top: concept bar, crisis bar, header */
+.concept{background:#000;border-bottom:1px solid #222}
+.concept a{color:var(--cyan)}
+.crisis{background:var(--black);color:#d9d7de;border-bottom:1px solid #1f1d22}
+.crisis strong{color:#ff7ad9}
+.crisis a{color:var(--cyan)}
+header.site{background:rgba(11,10,13,.96);border-bottom:1px solid #1f1d22}
+header.site .wrap{height:84px}
+.logo img{height:64px;width:auto}
+nav.main a{color:#e9e8ee}
+nav.main a:hover,nav.main a[aria-current]{background:rgba(255,255,255,.08);color:#fff}
+header.site .btn-outline{border-color:#fff;color:#fff}
+header.site .btn-outline:hover{background:#fff;color:var(--ink)}
+.menu-btn{color:#fff;border-color:#444}
+
+/* buttons: same pill shape, their gradient */
+.btn-primary{background:var(--grad);color:var(--ink)}
+.btn-primary:hover{background:var(--grad);color:var(--ink);filter:brightness(1.07);box-shadow:0 4px 18px rgba(39,245,251,.35)}
+.btn-outline{border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+
+/* hero with their aurora photo */
+.hero{padding:96px 0 88px;color:#fff;
+  background:linear-gradient(90deg,rgba(8,6,12,.72) 0%,rgba(8,6,12,.32) 55%,rgba(8,6,12,.08) 100%),
+             url("https://www.highersightscounseling.com/wp-content/uploads/2024/10/Group-213-1-r.jpg") center 35%/cover no-repeat,
+             var(--black)}
+.hero .eyebrow{color:var(--cyan)}
+.hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.hero .lead{color:#e4e2ea}
+.hero .btn-outline{border-color:#fff;color:#fff}
+.hero .btn-outline:hover{background:#fff;color:var(--ink)}
+.facts{color:#c9c6d1}
+.facts b{color:#fff}
+.hero-card{border:none;box-shadow:0 20px 60px rgba(0,0,0,.45);color:var(--ink)}
+.hero-card h3{color:var(--ink)}
+.hero-card a.row:hover{border-color:var(--magenta);color:var(--magenta)}
+
+/* sections */
+.eyebrow{color:var(--accent)}
+section.alt{background:#faf9fc}
+.step::before{background:var(--grad);color:var(--ink)}
+.step{background:#fff}
+.card .icon{background:var(--sage)}
+.pill-list li{background:var(--sage);color:#2a3f9a}
+.band{background:linear-gradient(90deg,var(--magenta) 0%,var(--blue) 100%)}
+.band p{color:#f3ecff}
+.band .btn-primary{background:#fff;color:var(--ink)}
+summary::after{color:var(--magenta)}
+
+/* footer */
+footer.site{background:var(--black);color:#bdbac6}
+footer.site a{color:#d8d6df}
+footer.site a:hover{color:var(--cyan)}
+footer.site .fine{border-top-color:#232028;color:#8a8794}
+footer.site .footer-logo{height:52px;width:auto;margin-bottom:14px}
+
+/* provider directory */
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.search:focus{outline-color:var(--blue)}
+.pcard .ph{background:var(--sage);color:var(--blue)}
+.pcard .cred{color:var(--accent)}
+.dir-tools{top:84px}
+@media (max-width:960px){.dir-tools{top:84px}}

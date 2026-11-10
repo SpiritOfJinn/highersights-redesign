@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Providers | Higher Sights Counseling</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-v2.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Redesign concept — not the official Higher Sights Counseling website · <a href="providers-v2.html" style="color:inherit;opacity:.75">Version 1</a> | <a href="providers-v2.html" style="color:inherit;font-weight:700;text-decoration:underline">Version 2 (their colors)</a></div>
+<div class="crisis"><div class="wrap">
+  <span><strong>In crisis?</strong> Call or text <a href="tel:988">988</a></span>
+  <span>Colorado Crisis Services <a href="tel:18444938255">1-844-493-8255</a></span>
+  <span>Emergency: <a href="tel:911">911</a></span>
+</div></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index-v2.html"><img src="https://www.highersightscounseling.com/wp-content/uploads/2024/10/highersightstransparent.png" alt="Higher Sights Counseling"></a>
+    <button class="menu-btn" aria-expanded="false" onclick="this.closest('header').classList.toggle('open');this.setAttribute('aria-expanded',this.closest('header').classList.contains('open'))">Menu</button>
+    <nav class="main" aria-label="Main">
+      <a href="index-v2.html#services">Services</a>
+      <a href="providers-v2.html" aria-current="page">Providers</a>
+      <a href="index-v2.html#insurance">Insurance</a>
+      <a href="index-v2.html#locations">Locations</a>
+      <a href="index-v2.html#faq">FAQ</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-outline btn-sm" href="https://app.highersightsportal.com">Client Login</a>
+      <a class="btn btn-primary btn-sm" href="https://www.highersightscounseling.com/contact/">Find a Provider</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section style="padding:48px 0 0">
+    <div class="wrap">
+      <div class="eyebrow">Our providers</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.8rem)">Find someone who fits</h1>
+      <p class="lead">Search by name, concern, therapy approach, or language. To see who takes your insurance and has openings, use <a href="https://www.highersightscounseling.com/contact/">the matching questionnaire</a>.</p>
+    </div>
+  </section>
+  <div class="dir-tools">
+    <div class="wrap">
+      <input class="search" id="q" type="search" placeholder="Try “EMDR”, “couples”, “ADHD”, “Spanish”…" aria-label="Search providers">
+      <div class="chips" id="chips"></div>
+      <div class="count" id="count" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pgrid" id="grid"></div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><img class="footer-logo" src="https://www.highersightscounseling.com/wp-content/uploads/2024/10/highersightstransparent.png" alt="Higher Sights Counseling"><h4>Higher Sights Counseling</h4><p>5353 W. Dartmouth Ave., Suite 305<br>Denver, CO 80227</p><p>Phone <a href="tel:17209437080">720-943-7080</a><br>Mon–Fri, 9am–5pm MT</p></div>
+      <div><h4>Care</h4><ul><li><a href="index-v2.html#services">Services</a></li><li><a href="providers-v2.html">Providers</a></li><li><a href="index-v2.html#insurance">Insurance</a></li><li><a href="index-v2.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Clients</h4><ul><li><a href="https://app.highersightsportal.com">Client Login</a></li><li><a href="https://www.highersightscounseling.com/contact/">Find a Provider</a></li></ul></div>
+      <div><h4>Crisis support (24/7)</h4><ul><li>Call or text <a href="tel:988">988</a></li><li>Colorado Crisis Services: <a href="tel:18444938255">1-844-493-8255</a></li><li>Emergency: <a href="tel:911">911</a></li></ul></div>
+    </div>
+    <div class="fine">© Higher Sights Counseling. Redesign concept for review.</div>
+  </div>
+</footer>
+
+<script src="providers.js"></script>
+<script src="directory.js"></script>
+</body>
+</html>
