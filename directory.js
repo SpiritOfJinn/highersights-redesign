@@ -49,13 +49,15 @@
     const term = q.value.trim().toLowerCase();
     const list = PROVIDERS.filter(p => {
       const hay = p.join(" ").toLowerCase();
-      if (term && !term.split(/\s+/).every(t => hay.includes(t))) return false;
+      if (term && !term.split(/\s+/).every(t => hay.includes(t.replace(/(ies|y)$/, "")))) return false;
       for (const [label, re] of FILTERS) if (active.has(label) && !re.test(p[4])) return false;
       return true;
     });
     grid.innerHTML = list.map(card).join("") || `<p style="grid-column:1/-1;color:var(--muted)">No providers match. Try fewer filters, or call 720-943-7080 and we'll help.</p>`;
     countEl.textContent = `Showing ${list.length} of ${PROVIDERS.length} providers`;
   }
+  const pre = new URLSearchParams(location.search).get("q");
+  if (pre) q.value = pre;
   q.addEventListener("input", render);
   render();
 })();
