@@ -13,7 +13,7 @@
     },
     trauma: {
       icon: "🧭", title: "Trauma & PTSD",
-      img: "1493836512294-502baa1986e2", alt: "Man sitting on a couch holding his head",
+      img: "1493836512294-502baa1986e2", fp: 0.3, alt: "Man sitting on a couch holding his head",
       intro: "After a traumatic experience, the brain can stay on high alert, as if the danger could happen again at any moment. Trauma-informed counseling, medication, or both can help your nervous system settle and let you feel safe again.",
       helps: ["Flashbacks, nightmares, or intrusive memories", "Feeling on edge, numb, or easily startled", "Childhood trauma and complex PTSD (C-PTSD)", "Abuse, assault, accidents, loss, and other traumatic events"],
       expect: ["You set the pace. You don't have to share details before you're ready", "Approaches include EMDR, somatic therapy, Brainspotting, IFS, and trauma-focused CBT", "Medication can be added to help with sleep, anxiety, or mood"],
@@ -73,7 +73,7 @@
   if (!root) return;
   const providersPage = root.dataset.providers || "providers.html";
   const keys = Object.keys(SERVICES);
-  const imgURL = id => `https://images.unsplash.com/photo-${id}?w=1400&h=480&fit=crop&auto=format&q=75`;
+  const imgURL = (id, fp) => `https://images.unsplash.com/photo-${id}?w=1400&h=480&fit=crop&auto=format&q=75${fp ? "&crop=focalpoint&fp-x=0.5&fp-y=" + fp : ""}`;
   const li = arr => "<ul>" + arr.map(x => `<li>${x}</li>`).join("") + "</ul>";
 
   root.innerHTML = `<div class="svc-side"><div class="eyebrow">Services</div><h2>How we can help</h2>
@@ -85,7 +85,7 @@
   const tabs = [...root.querySelectorAll('[role="tab"]')];
 
   // preload photos so switching tabs is instant
-  keys.forEach(k => { const i = new Image(); i.src = imgURL(SERVICES[k].img); });
+  keys.forEach(k => { const i = new Image(); i.src = imgURL(SERVICES[k].img, SERVICES[k].fp); });
 
   function show(k, focus) {
     const s = SERVICES[k];
@@ -97,7 +97,7 @@
       foot += `<a class="btn btn-outline" href="${providersPage}${s.q ? "?q=" + encodeURIComponent(s.q) : ""}">${s.all ? "Browse all" : "See"} ${n} ${s.label} →</a>`;
     }
     foot += `<a class="btn btn-primary" href="https://www.highersightscounseling.com/contact/">Find a provider</a>`;
-    panel.innerHTML = `<img class="svc-photo" src="${imgURL(s.img)}" alt="${s.alt}">
+    panel.innerHTML = `<img class="svc-photo" src="${imgURL(s.img, s.fp)}" alt="${s.alt}">
       <div class="svc-text"><h3>${s.title}</h3><p class="svc-intro">${s.intro}</p>
       <div class="svc-cols"><div><h4>Can help with</h4>${li(s.helps)}</div><div><h4>What to expect</h4>${li(s.expect)}</div></div>
       <div class="svc-foot">${foot}</div></div>`;
