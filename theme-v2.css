@@ -76,32 +76,28 @@ footer.site .footer-logo{height:52px;width:auto;margin-bottom:14px}
 .dir-tools{top:84px}
 @media (max-width:960px){.dir-tools{top:84px}}
 
-/* clickable service cards + detail pop-up */
-.svc{text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s,border-color .15s}
-.svc:hover,.svc:focus-visible{transform:translateY(-3px);border-color:var(--magenta);box-shadow:0 10px 30px rgba(84,126,232,.18);outline:none}
-.svc p{margin-bottom:14px}
-.svc .more{margin-top:auto;font-weight:600;font-size:.9rem;color:var(--brand)}
-.svc:hover .more{color:var(--magenta)}
-.svc-dialog{width:min(680px,calc(100% - 32px));max-height:calc(100vh - 48px);padding:0;border:none;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.5);color:var(--ink);overflow:auto}
-.svc-dialog::backdrop{background:rgba(8,6,12,.65);backdrop-filter:blur(3px)}
-.svc-dialog[open]{animation:svcIn .18s ease-out}
-@keyframes svcIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
-.svc-head{display:flex;align-items:center;gap:14px;padding:22px 26px;background:var(--black);color:#fff;position:sticky;top:0;border-bottom:3px solid transparent;border-image:var(--grad) 1}
-.svc-head h2{margin:0;font-size:1.35rem;color:#fff;flex:1}
-.svc-icon{font-size:1.6rem}
-.svc-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer}
-.svc-close:hover{background:rgba(255,255,255,.22)}
-.svc-body{padding:24px 26px 8px}
-.svc-intro{font-size:1.05rem;color:var(--muted)}
-.svc-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.svc-cols h3{font-size:1rem;margin-bottom:.4em}
-.svc-cols ul{margin:0;padding-left:1.15em;color:var(--muted);font-size:.95rem}
-.svc-cols li{margin-bottom:6px}
-.svc-foot{display:flex;gap:10px;flex-wrap:wrap;padding:18px 26px 26px}
-@media (max-width:560px){.svc-cols{grid-template-columns:1fr}.svc-head{padding:18px}.svc-body,.svc-foot{padding-left:18px;padding-right:18px}}
-
 /* "What do you need today?" box uses the Find a Provider gradient */
 .hero-card{background:var(--grad)}
 .hero-card h3,.hero-card small{color:var(--ink)}
 .hero-card a.row{background:rgba(255,255,255,.88);border-color:rgba(255,255,255,.6)}
 .hero-card a.row:hover{background:#fff;border-color:var(--ink);color:var(--ink)}
+
+/* services tabs: dark section like theirs, gradient underline on the active tab */
+#services{background:radial-gradient(900px 420px at 15% 0%,rgba(200,37,209,.18),transparent 60%),radial-gradient(900px 420px at 95% 100%,rgba(39,245,251,.12),transparent 60%),var(--black);color:#fff}
+#services h2{color:#fff}
+#services .lead{color:#c9c6d1}
+#services .eyebrow{color:var(--cyan)}
+.svc-list button{color:#d9d7e0}
+.svc-list button:hover{background:rgba(255,255,255,.06)}
+.svc-list button[aria-selected=true]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff;box-shadow:inset 4px 0 0 var(--cyan)}
+.svc-list .ti{background:rgba(255,255,255,.08)}
+.svc-panel{background:#16141a;border-color:#2a2730;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.svc-text h3{color:#fff}
+.svc-intro,.svc-cols ul{color:#c9c6d1}
+.svc-cols h4{color:var(--cyan)}
+.svc-panel .btn-outline{border-color:#fff;color:#fff}
+.svc-panel .btn-outline:hover{background:#fff;color:var(--ink)}
+@media (max-width:860px){
+  .svc-list button{background:rgba(255,255,255,.04);border-color:#2a2730}
+  .svc-list button[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--cyan)}
+}
