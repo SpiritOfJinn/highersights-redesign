@@ -9,16 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=8">
-<link rel="stylesheet" href="theme-v2.css?v=9">
+<link rel="stylesheet" href="theme-v2.css?v=10">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="concept">Redesign concept — not the official Higher Sights Counseling website · <a href="index.html" style="color:inherit;opacity:.75">Version 1</a> | <a href="index-v2.html" style="color:inherit;font-weight:700;text-decoration:underline">Version 2 (their colors)</a></div>
-<div class="crisis"><div class="wrap">
-  <span><strong>In crisis?</strong> Call or text <a href="tel:988">988</a></span>
-  <span>Colorado Crisis Services <a href="tel:18444938255">1-844-493-8255</a></span>
-  <span>Emergency: <a href="tel:911">911</a></span>
-</div></div>
+<div class="concept">Redesign concept — not the official Higher Sights Counseling website</div>
 
 <header class="site" id="top">
   <div class="wrap">
@@ -143,5 +138,12 @@
 
 <script src="providers.js?v=8"></script>
 <script src="services.js?v=8"></script>
+<script>
+/* Treatment Focus + Getting Started match the Services section height (desktop/tablet), auto-adjusting to screen size */
+(function(){var s=document.getElementById('services');if(!s)return;
+var t=[document.getElementById('treatment-focus'),document.getElementById('start')];
+function f(){var h=window.innerWidth>820?s.offsetHeight:0;t.forEach(function(e){if(e)e.style.minHeight=h?h+'px':'';});}
+if(window.ResizeObserver)new ResizeObserver(f).observe(s);window.addEventListener('resize',f);window.addEventListener('load',f);f();})();
+</script>
 </body>
 </html>
