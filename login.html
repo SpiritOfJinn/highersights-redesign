@@ -45,7 +45,7 @@ input{width:100%;font:inherit;font-size:.95rem;padding:12px 14px;border:1px soli
 <div class="concept">Redesign concept — demo sign-in only. Nothing you type here is sent anywhere. Real portal: <a href="https://app.highersightsportal.com">app.highersightsportal.com</a></div>
 <div class="wrap">
   <aside class="side">
-    <a href="index-v2.html" style="align-self:flex-start"><img src="https://www.highersightscounseling.com/wp-content/uploads/2024/10/highersightstransparent.png" alt="Higher Sights Counseling — back to the website"></a>
+    <a href="index-v2.html" id="backSite" style="align-self:flex-start"><img src="https://www.highersightscounseling.com/wp-content/uploads/2024/10/highersightstransparent.png" alt="Higher Sights Counseling — back to the website"></a>
     <div>
       <h1>Your appointments, messages, and billing — in one place.</h1>
       <p>Join video sessions, reschedule, sign forms, and pay your balance from your client portal.</p>
@@ -60,11 +60,16 @@ input{width:100%;font:inherit;font-size:.95rem;padding:12px 14px;border:1px soli
       <div class="field"><label for="em">Email</label><input id="em" type="email" value="client@example.com" readonly></div>
       <div class="field"><label for="pw">Password</label><input id="pw" type="password" value="demo-password" readonly></div>
       <div class="row"><label><input type="checkbox" checked disabled style="width:auto"> Keep me signed in</label><a href="#" onclick="return false">Forgot password?</a></div>
-      <a class="btn" href="portal.html">Sign in</a>
+      <a class="btn" id="signIn" href="portal.html">Sign in</a>
       <div class="foot">New to Higher Sights? <a href="https://www.highersightscounseling.com/contact/">Find a provider</a></div>
       <div class="help">Trouble signing in? Call the front desk at <a href="tel:17209437080">720-943-7080</a> (Mon–Fri, 9–5 MT).</div>
     </div>
   </main>
 </div>
+<script>
+const from=new URLSearchParams(location.search).get("from")==="v1"?"v1":"v2";
+document.getElementById("signIn").href="portal.html?from="+from;
+document.getElementById("backSite").href=from==="v1"?"index.html":"index-v2.html";
+</script>
 </body>
 </html>

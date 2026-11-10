@@ -104,17 +104,15 @@ main{max-width:1240px;margin:0 auto;padding:22px 20px 40px}
 </style>
 </head>
 <body>
-<div class="concept">Redesign concept with sample data — not connected to the real portal. Real portal: <a href="https://app.highersightsportal.com">app.highersightsportal.com</a> · <a href="index-v2.html">Website concept</a></div>
+<div class="concept">Redesign concept with sample data — not connected to the real portal. Real portal: <a href="https://app.highersightsportal.com">app.highersightsportal.com</a> · <a href="index-v2.html#services" id="siteLink">Website concept</a></div>
 
 <header class="top">
   <div class="in">
     <img src="https://www.highersightscounseling.com/wp-content/uploads/2024/10/highersightstransparent.png" alt="Higher Sights Counseling">
     <nav aria-label="Portal">
-      <a href="#" aria-current="page">Home</a>
+      <a href="index-v2.html#services" id="homeLink">Home</a>
       <a href="#appointments">Appointments</a>
       <a href="#billing">Billing</a>
-      <a href="#" data-demo>My Health</a>
-      <a href="#" data-demo>Find a Clinician</a>
     </nav>
     <div class="right">
       <button class="iconbtn" data-demo>Messages <span class="badge">2</span></button>
@@ -244,6 +242,9 @@ document.getElementById("unpaidOnly").addEventListener("change",renderInvoices);
 document.addEventListener("click",e=>{const t=e.target.closest("[data-demo]");if(!t)return;e.preventDefault();
   const el=document.getElementById("toast");el.textContent="Demo only — this button would open: "+t.textContent.trim().replace(/\s+\d+$/,"");el.style.display="block";clearTimeout(window.__tt);window.__tt=setTimeout(()=>el.style.display="none",2200)});
 renderAppts("up");renderInvoices();
+// Home goes back to the website version you came from
+const FROM=new URLSearchParams(location.search).get("from")==="v1"?"index.html":"index-v2.html";
+document.getElementById("homeLink").href=FROM+"#services";document.getElementById("siteLink").href=FROM+"#services";
 </script>
 </body>
 </html>
